@@ -1,11 +1,10 @@
 function newI = AMF(noiseP)
 
-tic;
-noisePic = double(zeros(132,132));
-noisePic(3:130, 3:130) = noiseP;
-newI = double(zeros(132,132));
-for i = 3:130
-    for j = 3:130
+noisePic = double(zeros(260,260));
+noisePic(3:258, 3:258) = noiseP;
+newI = double(zeros(260,260));
+for i = 3:258
+    for j = 3:258
          subMatrix = noisePic(i-1:i+1, j-1:j+1);
          maxp = max(subMatrix(:));
          minp = min(subMatrix(:)); 
@@ -34,6 +33,4 @@ for i = 3:130
     end
 end
 
-newI = newI(3:130, 3:130);
-fprintf('AMF ');
-toc;
+newI = newI(3:258, 3:258);

@@ -2,58 +2,145 @@
 
 close all;
 
-I = imread('lena.jpg');
-picOrigin = imresize(I, [128 128]);
-picInSize = double(imnoise(picOrigin, 'salt & pepper',0.9));
-picOrigin = double(picOrigin);
+% Read Image;
+I = imread('cameraman.tif');
+PicOrigin = imresize(I, [256 256]);
+PicNoise = double(imnoise(PicOrigin, 'salt & pepper',0.90));
+PicOrigin = double(PicOrigin);
 
-newI1 = AMF(picOrigin);
-newI2 = PA(picOrigin);
-        
-newPic1 = mat2gray(newI1);
-newPic2 = mat2gray(newI2);
-noisePic = mat2gray(picInSize);
-oriPic = mat2gray(picOrigin);
+OriGrayPic = mat2gray(PicOrigin);
+NoiseGrayPic = mat2gray(PicNoise);
+
+SAFavetime = 0;
+SMFavetime = 0;
+AMFavetime = 0;
+PAavetime = 0;
+
+FSIMSAFave = 0;
+FSIMSMFave = 0;
+FSIMAMFave = 0;
+FSIMPAave = 0;
+
+SSIMSAFave = 0;
+SSIMSMFave = 0;
+SSIMAMFave = 0;
+SSIMPAave = 0;
+
+H2GDSAFave = 0;
+H2GDSMFave = 0;
+H2GDAMFave = 0;
+H2GDPAave = 0;
+
+Iteration = 100;
+for i = 1:Iteration
+% Algorithms
+fprintf('SAF ');
 tic;
-h1 = fspecial('average',3);
-fprintf('average ');
-toc;
-faverage = imfilter(picInSize,h1);
+SAFGrayPic = imfilter(PicNoise,fspecial('average',3));
+SAFavetime = toc + SAFavetime;
+
+FSIMSAFave = FSIMSAFave + FeatureSIM(SAFGrayPic,OriGrayPic);
+SSIMSAFave = SSIMSAFave + ssim(SAFGrayPic,OriGrayPic);
+H2GDSAFave = H2GDSAFave + H2GD(SAFGrayPic,OriGrayPic);
+
+fprintf('SMF ');
 tic;
-fmedian = medfilt2(picInSize,[3 3]);
-fprintf('median ');
-toc;
+SMFGrayPic = medfilt2(PicNoise,[3 3]);
+SMFavetime = toc + SMFavetime;
+
+FSIMSMFave = FSIMSMFave + FeatureSIM(SMFGrayPic,OriGrayPic);
+SSIMSMFave = SSIMSMFave + ssim(SMFGrayPic,OriGrayPic);
+H2GDSMFave = H2GDSMFave + H2GD(SMFGrayPic,OriGrayPic);
+
+fprintf('AMF ');
+tic;
+AMFPic = AMF(PicNoise);
+AMFavetime = toc + AMFavetime;
+
+AMFGrayPic = mat2gray(AMFPic);
+FSIMAMFave = FSIMAMFave + FeatureSIM(AMFGrayPic,OriGrayPic);
+SSIMAMFave = SSIMAMFave + ssim(AMFGrayPic,OriGrayPic);
+H2GDAMFave = H2GDAMFave + H2GD(AMFGrayPic,OriGrayPic);
+
+fprintf('PA ');
+tic;
+PAPic = PA(PicNoise);
+PAavetime = toc + PAavetime;
+
+PAGrayPic = mat2gray(PAPic);
+FSIMPAave = FSIMPAave + FeatureSIM(PAGrayPic,OriGrayPic);
+SSIMPAave = SSIMPAave + ssim(PAGrayPic,OriGrayPic);
+H2GDPAave = H2GDPAave + H2GD(PAGrayPic,OriGrayPic);
+end
+
+SAFavetime = SAFavetime / Iteration;
+SMFavetime = SMFavetime / Iteration;
+AMFavetime = AMFavetime / Iteration;
+PAavetime = PAavetime / Iteration;
+
+FSIMSAFave = FSIMSAFave / Iteration;
+FSIMSMFave = FSIMSMFave / Iteration;
+FSIMAMFave = FSIMAMFave / Iteration;
+FSIMPAave = FSIMPAave / Iteration;
+
+SSIMSAFave = SSIMSAFave / Iteration;
+SSIMSMFave = SSIMSMFave / Iteration;
+SSIMAMFave = SSIMAMFave / Iteration;
+SSIMPAave = SSIMPAave / Iteration;
+
+H2GDSAFave = H2GDSAFave / Iteration;
+H2GDSMFave = H2GDSMFave / Iteration;
+H2GDAMFave = H2GDAMFave / Iteration;
+H2GDPAave = H2GDPAave / Iteration;
+
+% plot the pictures
 subplot(2,4,2);
-imagesc(oriPic); axis off;
+imagesc(OriGrayPic); axis off;
 title('Original');
 subplot(2,4,1);
-imagesc(noisePic);axis off;
+imagesc(NoiseGrayPic);axis off;
 title('salt&pepper noise');
 subplot(2,4,3);
-imagesc(fmedian);axis off;
-title('median');
+imagesc(SMFGrayPic);axis off;
+title('SMF');
 subplot(2,4,4);
-imagesc(faverage);axis off;
-title('old mean');
+imagesc(SAFGrayPic);axis off;
+title('SAF');
 subplot(2,4,6);
-imagesc(oriPic);axis off;
+imagesc(OriGrayPic);axis off;
 title('Original');
 subplot(2,4,5);
-imagesc(noisePic);axis off;
+imagesc(NoiseGrayPic);axis off;
 title('salt&pepper noise');
 subplot(2,4,7);
-imagesc(newPic1);axis off;
+imagesc(AMFGrayPic);axis off;
 title('AMF');
 subplot(2,4,8);
-imagesc(newPic2);axis off;
+imagesc(PAGrayPic);axis off;
 title('PA');
 colormap gray;
 
-psnrAMF = psnr(newI1,picOrigin);
-psnrPA = psnr(newI2,picOrigin);
-fprintf('The PSNR value AMF  is %0.4f\n', psnrAMF);
-fprintf('The PSNR value PA is %0.4f\n', psnrPA);
-ssimAMF = ssim(newI1,picOrigin);
-ssimPA = ssim(newI2,picOrigin);
-fprintf('The SSIM value AMF  is %0.4f\n', ssimAMF);
-fprintf('The SSIM value PA is %0.4f\n', ssimPA);
+fprintf('\n');
+% FSIM
+fprintf('The average  FSIM value of SAF is %0.4f\n', FSIMSAFave);
+fprintf('The average FSIM value of SMF is %0.4f\n', FSIMSMFave);
+fprintf('The average FSIM value of AMF  is %0.4f\n', FSIMAMFave);
+fprintf('The average FSIM value of PA is %0.4f\n', FSIMPAave);
+
+% SSIM
+fprintf('The average SSIM value of SAF is %0.4f\n', SSIMSAFave);
+fprintf('The average SSIM value of SMF is %0.4f\n', SSIMSMFave);
+fprintf('The average SSIM value of AMF  is %0.4f\n', SSIMAMFave);
+fprintf('The average SSIM value of PA is %0.4f\n', SSIMPAave);
+
+% Histogram distance
+fprintf('The average Histogram distance of SAF is %0.4f\n', H2GDSAFave);
+fprintf('The average Histogram distance of SMF is %0.4f\n', H2GDSMFave);
+fprintf('The average Histogram distance of AMF  is %0.4f\n', H2GDAMFave);
+fprintf('The average Histogram distance of PA is %0.4f\n', H2GDPAave);
+
+% time-used
+fprintf('The average time-used of SAF is %0.4f\n', SAFavetime);
+fprintf('The average time-used of SMF is %0.4f\n', SMFavetime);
+fprintf('The average time-used of AMF  is %0.4f\n', AMFavetime);
+fprintf('The average time-used of PA is %0.4f\n', PAavetime);

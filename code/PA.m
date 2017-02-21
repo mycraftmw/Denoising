@@ -1,11 +1,10 @@
 function newI = PA(noiseP)
 
-tic;
-noisePic = double(zeros(136,136));
-noisePic(5:132, 5:132) = noiseP;
-newI = double(zeros(136,136));
-for i=5:132
-    for j=5:132
+noisePic = double(zeros(264,264));
+noisePic(5:260, 5:260) = noiseP;
+newI = double(zeros(264,264));
+for i=5:260
+    for j=5:260
        if noisePic(i,j) ~= 0 && noisePic(i,j) ~= 255
            newI(i,j) = noisePic(i,j);
        else
@@ -39,12 +38,12 @@ for i=5:132
     end
 end
 
-for i = 5:132
-    for j = 5:132
+for i = 5:260
+    for j = 5:260
         subMatrix = newI(i-4:i+4, j-4:j+4);
         nmax = sum(subMatrix(:)==255);
         nmin = sum(subMatrix(:)==0);
-        para = 0.5*(min(i+4,132)-max(i-4,5)+1)*(min(j+4,132)-max(j-4,5)+1) + 9*((i+4-min(i+4,132))+(j+4-min(j+4,132))+(max(i-4,5)-(i-4))+(max(j-4,5)-(j-4)))+1;
+        para = 0.5*(min(i+4,260)-max(i-4,5)+1)*(min(j+4,260)-max(j-4,5)+1) + 9*((i+4-min(i+4,260))+(j+4-min(j+4,260))+(max(i-4,5)-(i-4))+(max(j-4,5)-(j-4)))+1;
         if (newI(i,j)==0 && nmin<para) || (newI(i,j)==255 && nmax<para)
             sumtotal = sum(subMatrix(:));
             s = sumtotal - 255*nmax; 
@@ -53,6 +52,4 @@ for i = 5:132
     end
 end
 
-newI = newI(5:132, 5:132);
-fprintf('PA ');
-toc;
+newI = newI(5:260, 5:260);
