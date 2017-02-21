@@ -2,7 +2,7 @@
 
 close all;
 
-I = imread('leina.tif');
+I = imread('lena.jpg');
 picOrigin = imresize(I, [128 128]);
 picInSize = double(imnoise(picOrigin, 'salt & pepper',0.9));
 picOrigin = double(picOrigin);
