@@ -14,10 +14,15 @@ newPic1 = mat2gray(newI1);
 newPic2 = mat2gray(newI2);
 noisePic = mat2gray(picInSize);
 oriPic = mat2gray(picOrigin);
+tic;
 h1 = fspecial('average',3);
+fprintf('average ');
+toc;
 faverage = imfilter(picInSize,h1);
+tic;
 fmedian = medfilt2(picInSize,[3 3]);
-
+fprintf('median ');
+toc;
 subplot(2,4,2);
 imagesc(oriPic); axis off;
 title('Original');
