@@ -122,23 +122,23 @@ fprintf('\n');
 % FSIM
 fprintf('The average FSIM value of SAF is %0.4f\n', FSIMSAFave);
 fprintf('The average FSIM value of SMF is %0.4f\n', FSIMSMFave);
-fprintf('The average FSIM value of AMF  is %0.4f\n', FSIMAMFave);
+fprintf('The average FSIM value of AMF is %0.4f\n', FSIMAMFave);
 fprintf('The average FSIM value of PA is %0.4f\n', FSIMPAave);
 
 % SSIM
 fprintf('The average SSIM value of SAF is %0.4f\n', SSIMSAFave);
 fprintf('The average SSIM value of SMF is %0.4f\n', SSIMSMFave);
-fprintf('The average SSIM value of AMF  is %0.4f\n', SSIMAMFave);
+fprintf('The average SSIM value of AMF is %0.4f\n', SSIMAMFave);
 fprintf('The average SSIM value of PA is %0.4f\n', SSIMPAave);
 
 % Histogram distance
 fprintf('The average Histogram distance of SAF is %0.4f\n', H2GDSAFave);
 fprintf('The average Histogram distance of SMF is %0.4f\n', H2GDSMFave);
-fprintf('The average Histogram distance of AMF  is %0.4f\n', H2GDAMFave);
+fprintf('The average Histogram distance of AMF is %0.4f\n', H2GDAMFave);
 fprintf('The average Histogram distance of PA is %0.4f\n', H2GDPAave);
 
 % time-used
 fprintf('The average time-used of SAF is %0.4f\n', SAFavetime);
 fprintf('The average time-used of SMF is %0.4f\n', SMFavetime);
-fprintf('The average time-used of AMF  is %0.4f\n', AMFavetime);
+fprintf('The average time-used of AMF is %0.4f\n', AMFavetime);
 fprintf('The average time-used of PA is %0.4f\n', PAavetime);
