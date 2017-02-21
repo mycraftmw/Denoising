@@ -3,9 +3,10 @@
 close all; clear all
 
 I = imread('cameraman.tif');
-pic = imnoise(I, 'salt & pepper',0.9);
-picInSize = double(imresize(pic, [128 128]));
-picOrigin = double(imresize(I, [128 128]));
+picOrigin = imresize(I, [128 128]);
+picInSize = double(imnoise(picOrigin, 'salt & pepper',0.9));
+picOrigin = double(picOrigin);
+
 
 
 %% newI1--method1
@@ -92,61 +93,9 @@ for i = 5:124
         end
     end
 end
-          
 
-
-
-
-sumline = sum(newI1(1,:));
-nmax = sum(newI1(1,:)==255);
-nmin = sum(newI1(1,:)==0);
-newI1(1,:) = (sumline-255*nmax)/(128-nmax-nmin);
-sumline = sum(newI1(128,:));
-nmax = sum(newI1(128,:)==255);
-nmin = sum(newI1(128,:)==0);
-newI1(128,:) = (sumline-255*nmax)/(128-nmax-nmin);
-sumline = sum(newI1(:,1));
-nmax = sum(newI1(:,1)==255);
-nmin = sum(newI1(:,1)==0);
-newI1(:,1) = (sumline-255*nmax)/(128-nmax-nmin);
-sumline = sum(newI1(:,128));
-nmax = sum(newI1(:,128)==255);
-nmin = sum(newI1(:,128)==0);
-newI1(:,128) = (sumline-255*nmax)/(128-nmax-nmin);
-
-sumline = sum(picInSize(1,:));
-nmax = sum(picInSize(1,:)==255);
-nmin = sum(picInSize(1,:)==0);
-newI2(1,:) = (sumline-255*nmax)/(128-nmax-nmin);
-sumline = sum(picInSize(128,:));
-nmax = sum(picInSize(128,:)==255);
-nmin = sum(picInSize(128,:)==0);
-newI2(128,:) = (sumline-255*nmax)/(128-nmax-nmin);
-sumline = sum(picInSize(:,1));
-nmax = sum(picInSize(:,1)==255);
-nmin = sum(picInSize(:,1)==0);
-newI2(:,1) = (sumline-255*nmax)/(128-nmax-nmin);
-sumline = sum(picInSize(:,128));
-nmax = sum(picInSize(:,128)==255);
-nmin = sum(picInSize(:,128)==0);
-newI2(:,128) = (sumline-255*nmax)/(128-nmax-nmin);
-sumline = sum(picInSize(2,:));
-nmax = sum(picInSize(2,:)==255);
-nmin = sum(picInSize(2,:)==0);
-newI2(2,:) = (sumline-255*nmax)/(128-nmax-nmin);
-sumline = sum(picInSize(127,:));
-nmax = sum(picInSize(127,:)==255);
-nmin = sum(picInSize(127,:)==0);
-newI2(127,:) = (sumline-255*nmax)/(128-nmax-nmin);
-sumline = sum(picInSize(:,2));
-nmax = sum(picInSize(:,2)==255);
-nmin = sum(picInSize(:,2)==0);
-newI2(:,2) = (sumline-255*nmax)/(128-nmax-nmin);
-sumline = sum(picInSize(:,127));
-nmax = sum(picInSize(:,127)==255);
-nmin = sum(picInSize(:,127)==0);
-newI2(:,127) = (sumline-255*nmax)/(128-nmax-nmin);
-
+%%%%%%%%%%%%%%%%%
+newI2 = AMF(picInSize);
         
 newPic1 = mat2gray(newI1);
 newPic2 = mat2gray(newI2);
