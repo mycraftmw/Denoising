@@ -2,7 +2,7 @@
 
 close all;
 
-I = imread('cameraman.tif');
+I = imread('leina.tif');
 picOrigin = imresize(I, [128 128]);
 picInSize = double(imnoise(picOrigin, 'salt & pepper',0.9));
 picOrigin = double(picOrigin);
