@@ -1,11 +1,12 @@
 %% final test
 
 close all;
+clear all;
 
 % Read Image;
-I = imread('cameraman.tif');
+I = imread('lena.jpg');
 PicOrigin = imresize(I, [256 256]);
-PicNoise = double(imnoise(PicOrigin, 'salt & pepper',0.90));
+PicNoise = double(imnoise(PicOrigin, 'salt & pepper',0.95));
 PicOrigin = double(PicOrigin);
 
 OriGrayPic = mat2gray(PicOrigin);
@@ -31,10 +32,10 @@ H2GDSMFave = 0;
 H2GDAMFave = 0;
 H2GDPAave = 0;
 
-Iteration = 100;
+Iteration = 1;
 for i = 1:Iteration
 % Algorithms
-fprintf('SAF ');
+fprintf('%d\n', i);
 tic;
 SAFGrayPic = imfilter(PicNoise,fspecial('average',3));
 SAFavetime = toc + SAFavetime;
@@ -43,7 +44,6 @@ FSIMSAFave = FSIMSAFave + FeatureSIM(SAFGrayPic,OriGrayPic);
 SSIMSAFave = SSIMSAFave + ssim(SAFGrayPic,OriGrayPic);
 H2GDSAFave = H2GDSAFave + H2GD(SAFGrayPic,OriGrayPic);
 
-fprintf('SMF ');
 tic;
 SMFGrayPic = medfilt2(PicNoise,[3 3]);
 SMFavetime = toc + SMFavetime;
@@ -52,7 +52,6 @@ FSIMSMFave = FSIMSMFave + FeatureSIM(SMFGrayPic,OriGrayPic);
 SSIMSMFave = SSIMSMFave + ssim(SMFGrayPic,OriGrayPic);
 H2GDSMFave = H2GDSMFave + H2GD(SMFGrayPic,OriGrayPic);
 
-fprintf('AMF ');
 tic;
 AMFPic = AMF(PicNoise);
 AMFavetime = toc + AMFavetime;
@@ -62,7 +61,6 @@ FSIMAMFave = FSIMAMFave + FeatureSIM(AMFGrayPic,OriGrayPic);
 SSIMAMFave = SSIMAMFave + ssim(AMFGrayPic,OriGrayPic);
 H2GDAMFave = H2GDAMFave + H2GD(AMFGrayPic,OriGrayPic);
 
-fprintf('PA ');
 tic;
 PAPic = PA(PicNoise);
 PAavetime = toc + PAavetime;
@@ -122,7 +120,7 @@ colormap gray;
 
 fprintf('\n');
 % FSIM
-fprintf('The average  FSIM value of SAF is %0.4f\n', FSIMSAFave);
+fprintf('The average FSIM value of SAF is %0.4f\n', FSIMSAFave);
 fprintf('The average FSIM value of SMF is %0.4f\n', FSIMSMFave);
 fprintf('The average FSIM value of AMF  is %0.4f\n', FSIMAMFave);
 fprintf('The average FSIM value of PA is %0.4f\n', FSIMPAave);

@@ -1,5 +1,114 @@
 cameraman:
-The average  FSIM value of SAF is 0.0961
+0.60
+The average FSIM value of SAF is 0.1181
+The average FSIM value of SMF is 0.2019
+The average FSIM value of AMF  is 0.9716
+The average FSIM value of PA is 0.9930
+The average SSIM value of SAF is 0.0000
+The average SSIM value of SMF is 0.0000
+The average SSIM value of AMF  is 0.5883
+The average SSIM value of PA is 0.8694
+The average Histogram distance of SAF is 0.0020
+The average Histogram distance of SMF is 0.0031
+The average Histogram distance of AMF  is 0.6351
+The average Histogram distance of PA is 0.8420
+The average time-used of SAF is 0.0015
+The average time-used of SMF is 0.0078
+The average time-used of AMF  is 0.5935
+The average time-used of PA is 0.5551
+
+0.65
+The average FSIM value of SAF is 0.1115
+The average FSIM value of SMF is 0.1562
+The average FSIM value of AMF  is 0.9577
+The average FSIM value of PA is 0.9911
+The average SSIM value of SAF is 0.0000
+The average SSIM value of SMF is 0.0000
+The average SSIM value of AMF  is 0.4593
+The average SSIM value of PA is 0.8462
+The average Histogram distance of SAF is 0.0020
+The average Histogram distance of SMF is 0.0033
+The average Histogram distance of AMF  is 0.6209
+The average Histogram distance of PA is 0.8477
+The average time-used of SAF is 0.0015
+The average time-used of SMF is 0.0076
+The average time-used of AMF  is 0.8087
+The average time-used of PA is 0.6618
+
+0.70
+The average FSIM value of SAF is 0.1092
+The average FSIM value of SMF is 0.1367
+The average FSIM value of AMF  is 0.9485
+The average FSIM value of PA is 0.9895
+The average SSIM value of SAF is 0.0000
+The average SSIM value of SMF is 0.0000
+The average SSIM value of AMF  is 0.3479
+The average SSIM value of PA is 0.8298
+The average Histogram distance of SAF is 0.0020
+The average Histogram distance of SMF is 0.0034
+The average Histogram distance of AMF  is 0.6061
+The average Histogram distance of PA is 0.8645
+The average time-used of SAF is 0.0014
+The average time-used of SMF is 0.0073
+The average time-used of AMF  is 0.8262
+The average time-used of PA is 0.6565
+
+0.75
+The average FSIM value of SAF is 0.1057
+The average FSIM value of SMF is 0.1171
+The average FSIM value of AMF  is 0.9301
+The average FSIM value of PA is 0.9873
+The average SSIM value of SAF is 0.0000
+The average SSIM value of SMF is 0.0000
+The average SSIM value of AMF  is 0.2172
+The average SSIM value of PA is 0.8043
+The average Histogram distance of SAF is 0.0020
+The average Histogram distance of SMF is 0.0036
+The average Histogram distance of AMF  is 0.5784
+The average Histogram distance of PA is 0.8592
+The average time-used of SAF is 0.0015
+The average time-used of SMF is 0.0070
+The average time-used of AMF  is 1.0195
+The average time-used of PA is 0.7974
+
+0.80
+The average FSIM value of SAF is 0.1033
+The average FSIM value of SMF is 0.1114
+The average FSIM value of AMF  is 0.9108
+The average FSIM value of PA is 0.9836
+The average SSIM value of SAF is 0.0000
+The average SSIM value of SMF is 0.0000
+The average SSIM value of AMF  is 0.1202
+The average SSIM value of PA is 0.7734
+The average Histogram distance of SAF is 0.0020
+The average Histogram distance of SMF is 0.0037
+The average Histogram distance of AMF  is 0.5347
+The average Histogram distance of PA is 0.9157
+The average time-used of SAF is 0.0015
+The average time-used of SMF is 0.0073
+The average time-used of AMF  is 0.8397
+The average time-used of PA is 0.6473
+
+0.85
+The average  FSIM value of SAF is 0.0991
+The average FSIM value of SMF is 0.1092
+The average FSIM value of AMF  is 0.8896
+The average FSIM value of PA is 0.9791
+The average SSIM value of SAF is 0.0000
+The average SSIM value of SMF is 0.0000
+The average SSIM value of AMF  is 0.0656
+The average SSIM value of PA is 0.7388
+The average Histogram distance of SAF is 0.0021
+The average Histogram distance of SMF is 0.0039
+The average Histogram distance of AMF  is 0.4724
+The average Histogram distance of PA is 0.8252
+The average time-used of SAF is 0.0047
+The average time-used of SMF is 0.0081
+The average time-used of AMF  is 0.8667
+The average time-used of PA is 0.6543
+
+0.90
+The average FSIM value of SAF is 0.0961
 The average FSIM value of SMF is 0.1278
 The average FSIM value of AMF  is 0.8675
 The average FSIM value of PA is 0.9729
@@ -15,3 +124,94 @@ The average time-used of SAF is 0.0009
 The average time-used of SMF is 0.0060
 The average time-used of AMF  is 0.6527
 The average time-used of PA is 0.5127
+
+0.95
+The average FSIM value of SAF is 0.0939
+The average FSIM value of SMF is 0.1496
+The average FSIM value of AMF  is 0.8502
+The average FSIM value of PA is 0.9621
+The average SSIM value of SAF is 0.0000
+The average SSIM value of SMF is 0.0000
+The average SSIM value of AMF  is 0.0159
+The average SSIM value of PA is 0.6093
+The average Histogram distance of SAF is 0.0021
+The average Histogram distance of SMF is 0.0041
+The average Histogram distance of AMF  is 0.2766
+The average Histogram distance of PA is 0.6352
+The average time-used of SAF is 0.0016
+The average time-used of SMF is 0.0064
+The average time-used of AMF  is 1.1198
+The average time-used of PA is 0.9507
+
+lena:
+0.80
+The average FSIM value of SAF is 0.1014
+The average FSIM value of SMF is 0.0961
+The average FSIM value of AMF  is 0.8933
+The average FSIM value of PA is 0.9910
+The average SSIM value of SAF is 0.0000
+The average SSIM value of SMF is 0.0000
+The average SSIM value of AMF  is 0.1457
+The average SSIM value of PA is 0.7939
+The average Histogram distance of SAF is 0.0021
+The average Histogram distance of SMF is 0.0027
+The average Histogram distance of AMF  is 0.5950
+The average Histogram distance of PA is 0.7402
+The average time-used of SAF is 0.0015
+The average time-used of SMF is 0.0068
+The average time-used of AMF  is 1.1036
+The average time-used of PA is 0.8675
+
+0.85
+The average FSIM value of SAF is 0.0976
+The average FSIM value of SMF is 0.0996
+The average FSIM value of AMF  is 0.8648
+The average FSIM value of PA is 0.9875
+The average SSIM value of SAF is 0.0000
+The average SSIM value of SMF is 0.0000
+The average SSIM value of AMF  is 0.0827
+The average SSIM value of PA is 0.7511
+The average Histogram distance of SAF is 0.0020
+The average Histogram distance of SMF is 0.0027
+The average Histogram distance of AMF  is 0.5256
+The average Histogram distance of PA is 0.7644
+The average time-used of SAF is 0.0016
+The average time-used of SMF is 0.0063
+The average time-used of AMF  is 1.2765
+The average time-used of PA is 1.0644
+
+0.90
+The average FSIM value of SAF is 0.0949
+The average FSIM value of SMF is 0.1149
+The average FSIM value of AMF  is 0.8401
+The average FSIM value of PA is 0.9825
+The average SSIM value of SAF is 0.0000
+The average SSIM value of SMF is 0.0000
+The average SSIM value of AMF  is 0.0422
+The average SSIM value of PA is 0.6946
+The average Histogram distance of SAF is 0.0020
+The average Histogram distance of SMF is 0.0027
+The average Histogram distance of AMF  is 0.4333
+The average Histogram distance of PA is 0.7269
+The average time-used of SAF is 0.0015
+The average time-used of SMF is 0.0061
+The average time-used of AMF  is 1.2712
+The average time-used of PA is 1.0373
+
+0.95
+The average FSIM value of SAF is 0.0946
+The average FSIM value of SMF is 0.1425
+The average FSIM value of AMF  is 0.8217
+The average FSIM value of PA is 0.9722
+The average SSIM value of SAF is 0.0000
+The average SSIM value of SMF is 0.0000
+The average SSIM value of AMF  is 0.0195
+The average SSIM value of PA is 0.6099
+The average Histogram distance of SAF is 0.0020
+The average Histogram distance of SMF is 0.0028
+The average Histogram distance of AMF  is 0.3001
+The average Histogram distance of PA is 0.7262
+The average time-used of SAF is 0.0015
+The average time-used of SMF is 0.0055
+The average time-used of AMF  is 1.3119
+The average time-used of PA is 1.0533
