@@ -46,9 +46,9 @@ colormap gray;
 
 psnrAMF = psnr(newI1,picOrigin);
 psnrPA = psnr(newI2,picOrigin);
-fprintf('\n The PSNR value AMF  is %0.4f', psnrAMF);
-fprintf('\n The PSNR value PA is %0.4f', psnrPA);
+fprintf('The PSNR value AMF  is %0.4f\n', psnrAMF);
+fprintf('The PSNR value PA is %0.4f\n', psnrPA);
 ssimAMF = ssim(newI1,picOrigin);
 ssimPA = ssim(newI2,picOrigin);
-fprintf('\n The SSIM value AMF  is %0.4f', ssimAMF);
-fprintf('\n The SSIM value PA is %0.4f', ssimPA);
+fprintf('The SSIM value AMF  is %0.4f\n', ssimAMF);
+fprintf('The SSIM value PA is %0.4f\n', ssimPA);
