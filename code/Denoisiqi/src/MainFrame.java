@@ -35,7 +35,7 @@ public class MainFrame extends JFrame {
         imagePanel.add(rstLabel);
 
         addImageButton.addActionListener(e -> {
-            JFileChooser chooser = new JFileChooser("D:\\picture");
+            JFileChooser chooser = new JFileChooser("D:\\temp");
             chooser.setDialogTitle("Please choose an image");
             chooser.setMultiSelectionEnabled(true);
             FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg", "jpg");
@@ -45,6 +45,21 @@ public class MainFrame extends JFrame {
             oriImage = new ImageIcon(file.getAbsolutePath());
             oriImage.setImage(scaleImage(oriImage, 512));
             oriLabel.setIcon(oriImage);
+        });
+
+        transferButton.addActionListener(e -> {
+//            rstImage = oriImage;
+//            rstLabel.setIcon(rstImage);
+            JFileChooser chooser = new JFileChooser("D:\\temp");
+            chooser.setDialogTitle("Please choose an image");
+            chooser.setMultiSelectionEnabled(true);
+            FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg", "jpg");
+            chooser.setFileFilter(filter);
+            chooser.showOpenDialog(null);
+            File file = chooser.getSelectedFile();
+            rstImage = new ImageIcon(file.getAbsolutePath());
+            rstImage.setImage(scaleImage(rstImage, 512));
+            rstLabel.setIcon(rstImage);
         });
 
         buttonPanel.add(addImageButton);
