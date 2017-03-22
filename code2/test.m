@@ -1,19 +1,14 @@
 %% final test
 
 % Read Image;
-% I = imread('cameraman.tif');
-% noiseIm = double(imnoise(I, 'salt & pepper',0.9));
-
-noiseIm = imread('test1.bmp');
+I = imread('code1.jpg');
+I = rgb2gray(I);
+noiseIm = double(imnoise(I, 'salt & pepper',0.6));
+figure(1),imshow(noiseIm);
+% noiseIm = imread('AMFlena0.95.jpg');
 resultI = RemovalNoise(noiseIm);
-resultI2show = mat2gray(resultI);
-imshow(resultI2show);
+figure(2),imshow(resultI);
 
-for i = 1:100
-    resultI = RemovalNoise(resultI);
-end
-resultI2show = mat2gray(resultI);
-imshow(resultI2show);
 
 % imshow(noiseIm);
 % PicOrigin = double(PicOrigin);

@@ -3,8 +3,8 @@
 close all; clear all
 
 I = imread('cameraman.tif');
-picOrigin = imresize(I, [128 128]);
-picInSize = double(imnoise(picOrigin, 'salt & pepper',0.9));
+picOrigin = imresize(I, [256,256]);
+picInSize = double(imnoise(picOrigin, 'salt & pepper',0.85));
 picOrigin = double(picOrigin);
 
 

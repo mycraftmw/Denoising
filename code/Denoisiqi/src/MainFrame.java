@@ -15,6 +15,8 @@ public class MainFrame extends JFrame {
     private JLabel rstLabel;
     private ImageIcon oriImage;
     private ImageIcon rstImage;
+    private String[] strs = new String[]{"gray01re.jpg", "gray09re.jpg"};
+    private int a = 0;
 
     public MainFrame() throws HeadlessException {
         buttonPanel = new JPanel(new FlowLayout());
@@ -23,8 +25,8 @@ public class MainFrame extends JFrame {
         addImageButton = new JButton("Add Image");
         oriLabel = new JLabel();
         rstLabel = new JLabel();
-        oriImage = new ImageIcon("D:\\picture\\dengpao.jpg");
-        rstImage = new ImageIcon("D:\\picture\\toefl.png");
+        oriImage = new ImageIcon("D:\\picture\\logo.png");
+        rstImage = new ImageIcon("D:\\picture\\taiji.png");
         oriImage.setImage(scaleImage(oriImage, 512));
         rstImage.setImage(scaleImage(rstImage, 512));
 
@@ -35,7 +37,7 @@ public class MainFrame extends JFrame {
         imagePanel.add(rstLabel);
 
         addImageButton.addActionListener(e -> {
-            JFileChooser chooser = new JFileChooser("D:\\temp");
+            JFileChooser chooser = new JFileChooser("D:\\");
             chooser.setDialogTitle("Please choose an image");
             chooser.setMultiSelectionEnabled(true);
             FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg", "jpg");
@@ -50,15 +52,17 @@ public class MainFrame extends JFrame {
         transferButton.addActionListener(e -> {
 //            rstImage = oriImage;
 //            rstLabel.setIcon(rstImage);
-            JFileChooser chooser = new JFileChooser("D:\\temp");
-            chooser.setDialogTitle("Please choose an image");
-            chooser.setMultiSelectionEnabled(true);
-            FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg", "jpg");
-            chooser.setFileFilter(filter);
-            chooser.showOpenDialog(null);
-            File file = chooser.getSelectedFile();
-            rstImage = new ImageIcon(file.getAbsolutePath());
-            rstImage.setImage(scaleImage(rstImage, 512));
+//            JFileChooser chooser = new JFileChooser("D:\\temp");
+//            chooser.setDialogTitle("Please choose an image");
+//            chooser.setMultiSelectionEnabled(true);
+//            FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg", "jpg");
+//            chooser.setFileFilter(filter);
+//            chooser.showOpenDialog(null);
+//            File file = chooser.getSelectedFile();
+//            rstImage = new ImageIcon(file.getAbsolutePath());
+            rstImage = new ImageIcon("d:\\ck.png");
+            a %= 2;
+            rstImage.setImage(MainFrame.this.scaleImage(rstImage, 512));
             rstLabel.setIcon(rstImage);
         });
 
