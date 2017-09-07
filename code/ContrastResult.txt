@@ -1,0 +1,207 @@
+noise density 0.1
+
+The average time-used of A is 0.0162
+The average time-used of B is 0.3827
+The average time-used of C is 1.0450
+The average time-used of D is 0.2793
+
+The average FSIM value of A is 0.9193
+The average FSIM value of B is 0.9694
+The average FSIM value of C is 0.5261
+The average FSIM value of D is 0.9869
+
+The average SSIM value of A is 0.5696
+The average SSIM value of B is 0.8074
+The average SSIM value of C is 0.4054
+The average SSIM value of D is 0.9623
+
+The average PSNR value of A is 26.0900
+The average PSNR value of B is 30.1088
+The average PSNR value of C is 28.6386
+The average PSNR value of D is 34.7117
+
+--------------------------------------------------
+noise density 0.2
+
+The average time-used of A is 0.0079
+The average time-used of B is 0.4044
+The average time-used of C is 1.0115
+The average time-used of D is 0.3063
+
+The average FSIM value of A is 0.8929
+The average FSIM value of B is 0.9578
+The average FSIM value of C is 0.5239
+The average FSIM value of D is 0.9721
+
+The average SSIM value of A is 0.5169
+The average SSIM value of B is 0.7981
+The average SSIM value of C is 0.4016
+The average SSIM value of D is 0.9185
+
+The average PSNR value of A is 23.9919
+The average PSNR value of B is 28.1580
+The average PSNR value of C is 28.0373
+The average PSNR value of D is 31.4955
+
+--------------------------------------------------
+noise density 0.3
+
+The average time-used of A is 0.0084
+The average time-used of B is 0.3624
+The average time-used of C is 1.0151
+The average time-used of D is 0.3492
+
+The average FSIM value of A is 0.8269
+The average FSIM value of B is 0.9377
+The average FSIM value of C is 0.5204
+The average FSIM value of D is 0.9593
+
+The average SSIM value of A is 0.4006
+The average SSIM value of B is 0.7534
+The average SSIM value of C is 0.3945
+The average SSIM value of D is 0.8731
+
+The average PSNR value of A is 20.6932
+The average PSNR value of B is 25.8380
+The average PSNR value of C is 27.2461
+The average PSNR value of D is 29.4523
+
+--------------------------------------------------
+noise density 0.4
+
+The average time-used of A is 0.0079
+The average time-used of B is 0.3746
+The average time-used of C is 1.0311
+The average time-used of D is 0.3864
+
+The average FSIM value of A is 0.7371
+The average FSIM value of B is 0.9165
+The average FSIM value of C is 0.5143
+The average FSIM value of D is 0.9445
+
+The average SSIM value of A is 0.2550
+The average SSIM value of B is 0.6982
+The average SSIM value of C is 0.3819
+The average SSIM value of D is 0.8217
+
+The average PSNR value of A is 17.5884
+The average PSNR value of B is 24.3503
+The average PSNR value of C is 26.2717
+The average PSNR value of D is 28.3303
+
+--------------------------------------------------
+noise density 0.5
+
+The average time-used of A is 0.0078
+The average time-used of B is 0.3926
+The average time-used of C is 1.0474
+The average time-used of D is 0.4320
+
+The average FSIM value of A is 0.6234
+The average FSIM value of B is 0.8798
+The average FSIM value of C is 0.5045
+The average FSIM value of D is 0.9282
+
+The average SSIM value of A is 0.1527
+The average SSIM value of B is 0.6002
+The average SSIM value of C is 0.3589
+The average SSIM value of D is 0.7607
+
+The average PSNR value of A is 14.4261
+The average PSNR value of B is 22.2171
+The average PSNR value of C is 24.7922
+The average PSNR value of D is 26.9104
+
+--------------------------------------------------
+noise density 0.6
+
+The average time-used of A is 0.0076
+The average time-used of B is 0.4378
+The average time-used of C is 1.1216
+The average time-used of D is 0.4718
+
+The average FSIM value of A is 0.5052
+The average FSIM value of B is 0.7951
+The average FSIM value of C is 0.4917
+The average FSIM value of D is 0.9078
+
+The average SSIM value of A is 0.0861
+The average SSIM value of B is 0.4114
+The average SSIM value of C is 0.2945
+The average SSIM value of D is 0.6803
+
+The average PSNR value of A is 11.4935
+The average PSNR value of B is 18.6727
+The average PSNR value of C is 21.3248
+The average PSNR value of D is 25.3055
+
+--------------------------------------------------
+noise density 0.7
+
+The average time-used of A is 0.0072
+The average time-used of B is 0.4801
+The average time-used of C is 1.1452
+The average time-used of D is 0.5149
+
+The average FSIM value of A is 0.4154
+The average FSIM value of B is 0.6802
+The average FSIM value of C is 0.4875
+The average FSIM value of D is 0.8843
+
+The average SSIM value of A is 0.0473
+The average SSIM value of B is 0.2200
+The average SSIM value of C is 0.2012
+The average SSIM value of D is 0.5866
+
+The average PSNR value of A is 9.3975
+The average PSNR value of B is 15.3938
+The average PSNR value of C is 17.7885
+The average PSNR value of D is 24.1197
+
+--------------------------------------------------
+noise density 0.8
+
+The average time-used of A is 0.0072
+The average time-used of B is 0.5850
+The average time-used of C is 1.1096
+The average time-used of D is 0.6573
+
+The average FSIM value of A is 0.3521
+The average FSIM value of B is 0.5231
+The average FSIM value of C is 0.4867
+The average FSIM value of D is 0.8474
+
+The average SSIM value of A is 0.0266
+The average SSIM value of B is 0.0876
+The average SSIM value of C is 0.0976
+The average SSIM value of D is 0.4793
+
+The average PSNR value of A is 7.5906
+The average PSNR value of B is 11.4115
+The average PSNR value of C is 12.6647
+The average PSNR value of D is 22.5596
+
+--------------------------------------------------
+noise density 0.9
+
+The average time-used of A is 0.0064
+The average time-used of B is 0.6515
+The average time-used of C is 1.0753
+The average time-used of D is 0.7265
+
+The average FSIM value of A is 0.3108
+The average FSIM value of B is 0.3757
+The average FSIM value of C is 0.4683
+The average FSIM value of D is 0.7782
+
+The average SSIM value of A is 0.0131
+The average SSIM value of B is 0.0282
+The average SSIM value of C is 0.0311
+The average SSIM value of D is 0.3353
+
+The average PSNR value of A is 6.2738
+The average PSNR value of B is 8.2161
+The average PSNR value of C is 8.7793
+The average PSNR value of D is 20.7252
+
+--------------------------------------------------

@@ -1,77 +1,76 @@
-%% final test
+%% different test sets
 
-% Read Image;
-I = imread('code1.jpg');
-I = rgb2gray(I);
-noiseIm = double(imnoise(I, 'salt & pepper',0.6));
-figure(1),imshow(noiseIm);
-% noiseIm = imread('AMFlena0.95.jpg');
+%% (a)RemovalNoise function
+I = imread('cameraman.tif');
+% origin image figure(1)
+figure(1),imshow(I);
+noiseIm = double(imnoise(I, 'salt & pepper',0.9));
+noiseI2show = mat2gray(noiseIm);
+% noise image figure(2)
+figure(2),imshow(noiseI2show);
+resultIm = RemovalNoise(noiseIm);
+result2show = mat2gray(resultIm);
+% denoise image figure(3)
+figure(3),imshow(result2show);
+
+%% (b)Gaussian low_pass
+I = imread('cameraman.tif');
+% origin image figure(1)
+figure(1),imshow(I);
+noiseIm = double(imnoise(I, 'salt & pepper',0.3));
+noiseI2show = mat2gray(noiseIm);
+% noise image figure(2)
+figure(2),imshow(noiseI2show);
+gaussianFilter = fspecial('gaussian');
+resultIm = imfilter(noiseIm, gaussianFilter);
+result2show = mat2gray(resultIm);
+% denoise image figure(3)
+figure(3),imshow(result2show);
+
+%% (c)work on real images
+IOriginal = imread('example-IR.jpg');
+I = rgb2gray(IOriginal);
+figure(1),imshow(I,'border','tight','InitialMagnification','fit');                                              
+set (gcf,'Position',[0,0,256,256]);
+axis normal;
+
+noiseIm = double(imnoise(I, 'salt & pepper',0.1));
+I2show = mat2gray(noiseIm);
+%imwrite(I2show,'cameraman50ori.png');
+figure(2),imshow(I2show,'border','tight','InitialMagnification','fit');
+set (gcf,'Position',[0,0,256,256]);
+axis normal;
+
 resultI = RemovalNoise(noiseIm);
-figure(2),imshow(resultI);
+resultI2show = mat2gray(resultI);
+%imwrite(resultI2show,'cameraman50ori.png');
+figure(3)
+imshow(resultI2show,'border','tight','InitialMagnification','fit');
+set (gcf,'Position',[0,0,256,256]);
+axis normal;
 
-
-% imshow(noiseIm);
-% PicOrigin = double(PicOrigin);
-% 
-% OriGrayPic = mat2gray(PicOrigin);
-% NoiseGrayPic = mat2gray(PicNoise);
-
-% imSize = size(noiseIm);
-% nRows = imSize(1);
-% nColumns = imSize(2);
-    
-% noisePic = double(zeros(nRows+8, nColumns+8));
-% noisePic(5:nRows+4, 5:nColumns+4) = noiseIm;
-% newI = double(zeros(nRows+8, nColumns+8));
-% for i=5:nRows+4
-%     for j=5:nColumns+4
-%         if noisePic(i,j) ~= 0 && noisePic(i,j) ~= 255
-%             newI(i,j) = noisePic(i,j);
-%         else
-%             subMatrix = noisePic(i-1:i+1, j-1:j+1);
-%             nmax = sum(subMatrix(:)==255);
-%             nmin = sum(subMatrix(:)==0);         
-%             if 9-nmax-nmin>0
-%                 sumtotal = sum(subMatrix(:));
-%                 s = sumtotal - 255*nmax;
-%                 newI(i,j) = s/(9-nmax-nmin);
-%             else 
-%                 subMatrix = noisePic(i-2:i+2, j-2:j+2);
-%                 nmax = sum(subMatrix(:)==255);
-%                 nmin = sum(subMatrix(:)==0);
-%                 if 25-nmax-nmin>0 
-%                     sumtotal = sum(subMatrix(:));
-%                     s = sumtotal - 255*nmax;
-%                     newI(i,j) = s/(25-nmax-nmin);
-%                 else if nmax>nmin
-%                     newI(i,j) = 255;
-%                     else
-%                         newI(i,j) = 0;
-%                     end
-%                 end
-%             end
-%         end
-%     end
-% end
-% newI2show = mat2gray(newI);
-% imshow(newI2show);
-% 
-% for i = 5:nRows+4
-%     for j = 5:nColumns+4
-%         subMatrix = newI(i-4:i+4, j-4:j+4);
-%         nmax = sum(subMatrix(:)==255);
-%         nmin = sum(subMatrix(:)==0);
-%         para = 0.5*(min(i+4,nRows+4)-max(i-4,5)+1)*(min(j+4,nColumns+4)-max(j-4,5)+1) + 9*((i+4-min(i+4,nRows+4))+(j+4-min(j+4,nColumns+4))+(max(i-4,5)-(i-4))+(max(j-4,5)-(j-4)))+1;
-%         if (newI(i,j)==0 && nmin<para) || (newI(i,j)==255 && nmax<para)
-%             sumtotal = sum(subMatrix(:));
-%             s = sumtotal - 255*nmax; 
-%             newI(i,j) = s/(81-nmax-nmin);
-%         end
-%     end
-% end
-% newI2show = mat2gray(newI);
-% imshow(newI2show);
-% resultIm = newI(5:nRows+4, 5:nColumns+4);
+%% (d)show the transform images, fft
+I = imread('cameraman.tif');
+% origin image figure(1)
+figure(1),imshow(I);
+A = fft2(double(I));
+% origin image after fft figure(2)
+figure(2),imagesc(log(abs(fftshift(A)))), colormap gray;
+noiseIm = double(imnoise(I, 'salt & pepper',0.5));
+noiseI2show = mat2gray(noiseIm);
+%noise image_salt & pepper, figure(3)
+figure(3),imshow(noiseI2show);
+A = fft2(noiseIm);
+%noise image_salt & pepper after fft, figure(4)
+figure(4),imagesc(log(abs(fftshift(A)))), colormap gray;
+%noise image_gaussian, figure(5)
+noiseIm2 = double(imnoise(I, 'gaussian'));
+noiseI2show2 = mat2gray(noiseIm2);
+figure(5),imshow(noiseI2show2);
+%noise image_gaussian after fft, figure(4)
+A = fft2(noiseIm2);
+figure(6),imagesc(log(abs(fftshift(A)))), colormap gray;
+%imwrite(noiseI2show,'cameraman50ori.png');
 
 
 

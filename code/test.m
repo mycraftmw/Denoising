@@ -4,79 +4,76 @@ close all;
 clear all;
 
 % Read Image;
-I = imread('cameraman.tif');
-PicOrigin = imresize(I, [256 256]);
-noisedensity = 0.95;
+I = imread('lena.jpg');
+PicOrigin = I;
+noisedensity = 0.1;
 PicNoise = double(imnoise(PicOrigin, 'salt & pepper',noisedensity));
 PicOrigin = double(PicOrigin);
 
 OriGrayPic = mat2gray(PicOrigin);
 NoiseGrayPic = mat2gray(PicNoise);
 
-figure(1)
-imshow(NoiseGrayPic,'border','tight','InitialMagnification','fit');
-set (gcf,'Position',[0,0,256,256]);
-axis normal;
-saveas(1,['D:\code\repository\Denoising\report\','cameraman',num2str(noisedensity),'.jpg']);
+% figure(1)
+% imshow(NoiseGrayPic,'border','tight','InitialMagnification','fit');
+% set (gcf,'Position',[0,0,256,256]);
+% axis normal;
+% saveas(1,['D:\code\repository\Denoising\report\','cameraman',num2str(noisedensity),'.jpg']);
 
-% SAFavetime = 0;
-% SMFavetime = 0;
-% AMFavetime = 0;
-% PAavetime = 0;
-% 
-% FSIMSAFave = 0;
-% FSIMSMFave = 0;
-% FSIMAMFave = 0;
-% FSIMPAave = 0;
-% 
-% SSIMSAFave = 0;
-% SSIMSMFave = 0;
-% SSIMAMFave = 0;
-% SSIMPAave = 0;
-% 
-% H2GDSAFave = 0;
-% H2GDSMFave = 0;
-% H2GDAMFave = 0;
-% H2GDPAave = 0;
-% 
-% Iteration = 1;
-% for i = 1:Iteration
-% % Algorithms
-% fprintf('%d\n', i);
-% tic;
-% SAFGrayPic = imfilter(PicNoise,fspecial('average',3));
-% SAFavetime = toc + SAFavetime;
-% 
-% FSIMSAFave = FSIMSAFave + FeatureSIM(SAFGrayPic,OriGrayPic);
-% SSIMSAFave = SSIMSAFave + ssim(SAFGrayPic,OriGrayPic);
-% H2GDSAFave = H2GDSAFave + H2GD(SAFGrayPic,OriGrayPic);
-% 
-% tic;
-% SMFGrayPic = medfilt2(PicNoise,[3 3]);
-% SMFavetime = toc + SMFavetime;
-% 
-% FSIMSMFave = FSIMSMFave + FeatureSIM(SMFGrayPic,OriGrayPic);
-% SSIMSMFave = SSIMSMFave + ssim(SMFGrayPic,OriGrayPic);
-% H2GDSMFave = H2GDSMFave + H2GD(SMFGrayPic,OriGrayPic);
-% 
-% tic;
-% AMFPic = AMF(PicNoise);
-% AMFavetime = toc + AMFavetime;
-% 
-% AMFGrayPic = mat2gray(AMFPic);
-% FSIMAMFave = FSIMAMFave + FeatureSIM(AMFGrayPic,OriGrayPic);
-% SSIMAMFave = SSIMAMFave + ssim(AMFGrayPic,OriGrayPic);
-% H2GDAMFave = H2GDAMFave + H2GD(AMFGrayPic,OriGrayPic);
-% 
-% tic;
-% PAPic = PA(PicNoise);
-% PAavetime = toc + PAavetime;
-% 
-% PAGrayPic = mat2gray(PAPic);
-% FSIMPAave = FSIMPAave + FeatureSIM(PAGrayPic,OriGrayPic);
-% SSIMPAave = SSIMPAave + ssim(PAGrayPic,OriGrayPic);
-% H2GDPAave = H2GDPAave + H2GD(PAGrayPic,OriGrayPic);
-% end
+SAFavetime = 0;
+SMFavetime = 0;
+AMFavetime = 0;
+PAavetime = 0;
+
+FSIMSAFave = 0;
+FSIMSMFave = 0;
+FSIMAMFave = 0;
+FSIMPAave = 0;
+
+SSIMSAFave = 0;
+SSIMSMFave = 0;
+SSIMAMFave = 0;
+SSIMPAave = 0;
+
+H2GDSAFave = 0;
+H2GDSMFave = 0;
+H2GDAMFave = 0;
+H2GDPAave = 0;
+
+Iteration = 1;
+for i = 1:Iteration
+% Algorithms
+fprintf('%d\n', i);
+
+tic;
+SMFGrayPic = medfilt2(PicNoise,[3 3]);
+SMFavetime = toc + SMFavetime;
+
+FSIMSMFave = FSIMSMFave + FeatureSIM(SMFGrayPic,OriGrayPic);
+SSIMSMFave = SSIMSMFave + ssim(SMFGrayPic,OriGrayPic);
+H2GDSMFave = H2GDSMFave + H2GD(SMFGrayPic,OriGrayPic);
+
+tic;
+AMFPic = AMF(PicNoise);
+AMFavetime = toc + AMFavetime;
+
+AMFGrayPic = mat2gray(AMFPic);
+FSIMAMFave = FSIMAMFave + FeatureSIM(AMFGrayPic,OriGrayPic);
+SSIMAMFave = SSIMAMFave + ssim(AMFGrayPic,OriGrayPic);
+H2GDAMFave = H2GDAMFave + H2GD(AMFGrayPic,OriGrayPic);
+
+[pp, tt, BMPic] = myBM3D(PicOrigin, AMFPic);
+BMGrayPic = mat2gray(BMPic);
+
+
+tic;
+PAPic = RemovalNoise(PicNoise,[2 4]);
+PAavetime = toc + PAavetime;
+
+PAGrayPic = mat2gray(PAPic);
+FSIMPAave = FSIMPAave + FeatureSIM(PAGrayPic,OriGrayPic);
+SSIMPAave = SSIMPAave + ssim(PAGrayPic,OriGrayPic);
+H2GDPAave = H2GDPAave + H2GD(PAGrayPic,OriGrayPic);
+end
 % 
 % SAFavetime = SAFavetime / Iteration;
 % SMFavetime = SMFavetime / Iteration;
@@ -98,7 +95,7 @@ saveas(1,['D:\code\repository\Denoising\report\','cameraman',num2str(noisedensit
 % H2GDAMFave = H2GDAMFave / Iteration;
 % H2GDPAave = H2GDPAave / Iteration;
 % 
-% % plot the pictures
+% plot the pictures
 % subplot(2,4,2);
 % imagesc(OriGrayPic); axis off;
 % title('Original');
@@ -125,26 +122,26 @@ saveas(1,['D:\code\repository\Denoising\report\','cameraman',num2str(noisedensit
 % title('PA');
 % colormap gray;
 
-% figure(1)
-% imshow(mat2gray(SAFGrayPic),'border','tight','InitialMagnification','fit');
-% set (gcf,'Position',[0,0,256,256]);
-% axis normal;
-% figure(2)
-% imshow(mat2gray(SMFGrayPic),'border','tight','InitialMagnification','fit');
-% set (gcf,'Position',[0,0,256,256]);
-% axis normal;
-% figure(3)
-% imshow(mat2gray(AMFGrayPic),'border','tight','InitialMagnification','fit');
-% set (gcf,'Position',[0,0,256,256]);
-% axis normal;
-% figure(4)
-% imshow(mat2gray(PAGrayPic),'border','tight','InitialMagnification','fit');
-% set (gcf,'Position',[0,0,256,256]);
-% axis normal;
-% saveas(1,['D:\code\repository\Denoising\report\','SAFcameraman',num2str(noisedensity),'.jpg']);
-% saveas(2,['D:\code\repository\Denoising\report\','SMFcameraman',num2str(noisedensity),'.jpg']);
-% saveas(3,['D:\code\repository\Denoising\report\','AMFcameraman',num2str(noisedensity),'.jpg']);
-% saveas(4,['D:\code\repository\Denoising\report\','PAcameraman',num2str(noisedensity),'.jpg']);
+figure(1)
+imshow(mat2gray(SMFGrayPic),'border','tight','InitialMagnification','fit');
+set (gcf,'Position',[0,0,256,256]);
+axis normal;
+figure(2)
+imshow(mat2gray(AMFGrayPic),'border','tight','InitialMagnification','fit');
+set (gcf,'Position',[0,0,256,256]);
+axis normal;
+figure(3)
+imshow(mat2gray(BMGrayPic),'border','tight','InitialMagnification','fit');
+set (gcf,'Position',[0,0,256,256]);
+axis normal;
+figure(4)
+imshow(mat2gray(PAGrayPic),'border','tight','InitialMagnification','fit');
+set (gcf,'Position',[0,0,256,256]);
+axis normal;
+saveas(1,['D:\code\repository\Denoising\report\','SMFlena',num2str(noisedensity),'.jpg']);
+saveas(2,['D:\code\repository\Denoising\report\','AMFlena',num2str(noisedensity),'.jpg']);
+saveas(3,['D:\code\repository\Denoising\report\','BMlena',num2str(noisedensity),'.jpg']);
+saveas(4,['D:\code\repository\Denoising\report\','PAlena',num2str(noisedensity),'.jpg']);
 
 % fprintf('\n');
 % % FSIM

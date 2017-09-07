@@ -1,0 +1,297 @@
+noise density 0.1
+
+The average time-used of A is 3.0371
+The average time-used of B is 3.0549
+The average time-used of C is 3.0105
+The average time-used of D is 2.7027
+The average time-used of E is 2.7417
+
+The average FSIM value of A is 0.9900
+The average FSIM value of B is 0.9900
+The average FSIM value of C is 0.9900
+The average FSIM value of D is 0.9868
+The average FSIM value of E is 0.9868
+
+The average SSIM value of A is 0.9663
+The average SSIM value of B is 0.9663
+The average SSIM value of C is 0.9663
+The average SSIM value of D is 0.9628
+The average SSIM value of E is 0.9628
+
+The average Histogram distance of A is 1.0000
+The average Histogram distance of B is 1.0000
+The average Histogram distance of C is 1.0000
+The average Histogram distance of D is 1.0000
+The average Histogram distance of E is 1.0000
+
+The average PSNR value of A is 35.9563
+The average PSNR value of B is 35.9563
+The average PSNR value of C is 35.9563
+The average PSNR value of D is 34.7502
+The average PSNR value of E is 34.7502
+
+--------------------------------------------------
+noise density 0.2
+
+The average time-used of A is 2.8448
+The average time-used of B is 2.8128
+The average time-used of C is 2.7998
+The average time-used of D is 2.4427
+The average time-used of E is 2.4060
+
+The average FSIM value of A is 0.9800
+The average FSIM value of B is 0.9800
+The average FSIM value of C is 0.9800
+The average FSIM value of D is 0.9742
+The average FSIM value of E is 0.9742
+
+The average SSIM value of A is 0.9278
+The average SSIM value of B is 0.9278
+The average SSIM value of C is 0.9278
+The average SSIM value of D is 0.9221
+The average SSIM value of E is 0.9221
+
+The average Histogram distance of A is 1.0000
+The average Histogram distance of B is 1.0000
+The average Histogram distance of C is 1.0000
+The average Histogram distance of D is 1.0000
+The average Histogram distance of E is 1.0000
+
+The average PSNR value of A is 32.7274
+The average PSNR value of B is 32.7274
+The average PSNR value of C is 32.7274
+The average PSNR value of D is 31.6771
+The average PSNR value of E is 31.6771
+
+--------------------------------------------------
+noise density 0.3
+
+The average time-used of A is 3.2005
+The average time-used of B is 3.1922
+The average time-used of C is 3.1633
+The average time-used of D is 2.5583
+The average time-used of E is 2.5704
+
+The average FSIM value of A is 0.9676
+The average FSIM value of B is 0.9676
+The average FSIM value of C is 0.9676
+The average FSIM value of D is 0.9604
+The average FSIM value of E is 0.9604
+
+The average SSIM value of A is 0.8776
+The average SSIM value of B is 0.8776
+The average SSIM value of C is 0.8776
+The average SSIM value of D is 0.8737
+The average SSIM value of E is 0.8737
+
+The average Histogram distance of A is 1.0000
+The average Histogram distance of B is 1.0000
+The average Histogram distance of C is 1.0000
+The average Histogram distance of D is 1.0000
+The average Histogram distance of E is 1.0000
+
+The average PSNR value of A is 30.1009
+The average PSNR value of B is 30.1009
+The average PSNR value of C is 30.1009
+The average PSNR value of D is 29.5805
+The average PSNR value of E is 29.5805
+
+--------------------------------------------------
+noise density 0.4
+
+The average time-used of A is 2.5811
+The average time-used of B is 2.5721
+The average time-used of C is 2.5717
+The average time-used of D is 2.0270
+The average time-used of E is 2.0199
+
+The average FSIM value of A is 0.9509
+The average FSIM value of B is 0.9509
+The average FSIM value of C is 0.9509
+The average FSIM value of D is 0.9447
+The average FSIM value of E is 0.9446
+
+The average SSIM value of A is 0.8189
+The average SSIM value of B is 0.8189
+The average SSIM value of C is 0.8189
+The average SSIM value of D is 0.8191
+The average SSIM value of E is 0.8190
+
+The average Histogram distance of A is 1.0000
+The average Histogram distance of B is 1.0000
+The average Histogram distance of C is 1.0000
+The average Histogram distance of D is 1.0000
+The average Histogram distance of E is 1.0000
+
+The average PSNR value of A is 28.5024
+The average PSNR value of B is 28.5024
+The average PSNR value of C is 28.5024
+The average PSNR value of D is 28.2349
+The average PSNR value of E is 28.2354
+
+--------------------------------------------------
+noise density 0.5
+
+The average time-used of A is 2.9846
+The average time-used of B is 2.9782
+The average time-used of C is 2.9771
+The average time-used of D is 2.2647
+The average time-used of E is 2.2550
+
+The average FSIM value of A is 0.9337
+The average FSIM value of B is 0.9337
+The average FSIM value of C is 0.9337
+The average FSIM value of D is 0.9266
+The average FSIM value of E is 0.9266
+
+The average SSIM value of A is 0.7541
+The average SSIM value of B is 0.7541
+The average SSIM value of C is 0.7541
+The average SSIM value of D is 0.7550
+The average SSIM value of E is 0.7551
+
+The average Histogram distance of A is 1.0000
+The average Histogram distance of B is 1.0000
+The average Histogram distance of C is 1.0000
+The average Histogram distance of D is 1.0000
+The average Histogram distance of E is 1.0000
+
+The average PSNR value of A is 26.5939
+The average PSNR value of B is 26.5939
+The average PSNR value of C is 26.5957
+The average PSNR value of D is 26.6499
+The average PSNR value of E is 26.6660
+
+--------------------------------------------------
+noise density 0.6
+
+The average time-used of A is 3.4470
+The average time-used of B is 3.4337
+The average time-used of C is 3.4371
+The average time-used of D is 2.5295
+The average time-used of E is 2.4838
+
+The average FSIM value of A is 0.9155
+The average FSIM value of B is 0.9155
+The average FSIM value of C is 0.9155
+The average FSIM value of D is 0.9089
+The average FSIM value of E is 0.9089
+
+The average SSIM value of A is 0.6800
+The average SSIM value of B is 0.6800
+The average SSIM value of C is 0.6798
+The average SSIM value of D is 0.6826
+The average SSIM value of E is 0.6832
+
+The average Histogram distance of A is 1.0000
+The average Histogram distance of B is 1.0000
+The average Histogram distance of C is 1.0000
+The average Histogram distance of D is 1.0000
+The average Histogram distance of E is 1.0000
+
+The average PSNR value of A is 25.2385
+The average PSNR value of B is 25.2385
+The average PSNR value of C is 25.2353
+The average PSNR value of D is 25.3469
+The average PSNR value of E is 25.3848
+
+--------------------------------------------------
+noise density 0.7
+
+The average time-used of A is 3.9920
+The average time-used of B is 3.9865
+The average time-used of C is 3.9599
+The average time-used of D is 2.8182
+The average time-used of E is 2.7209
+
+The average FSIM value of A is 0.8840
+The average FSIM value of B is 0.8840
+The average FSIM value of C is 0.8834
+The average FSIM value of D is 0.8803
+The average FSIM value of E is 0.8808
+
+The average SSIM value of A is 0.5829
+The average SSIM value of B is 0.5829
+The average SSIM value of C is 0.5820
+The average SSIM value of D is 0.5864
+The average SSIM value of E is 0.5884
+
+The average Histogram distance of A is 1.0000
+The average Histogram distance of B is 1.0000
+The average Histogram distance of C is 1.0000
+The average Histogram distance of D is 1.0000
+The average Histogram distance of E is 1.0000
+
+The average PSNR value of A is 23.8371
+The average PSNR value of B is 23.8392
+The average PSNR value of C is 23.8410
+The average PSNR value of D is 24.0021
+The average PSNR value of E is 24.0691
+
+--------------------------------------------------
+noise density 0.8
+
+The average time-used of A is 4.9167
+The average time-used of B is 4.8953
+The average time-used of C is 4.7920
+The average time-used of D is 3.4023
+The average time-used of E is 3.0550
+
+The average FSIM value of A is 0.8477
+The average FSIM value of B is 0.8477
+The average FSIM value of C is 0.8473
+The average FSIM value of D is 0.8461
+The average FSIM value of E is 0.8476
+
+The average SSIM value of A is 0.4748
+The average SSIM value of B is 0.4749
+The average SSIM value of C is 0.4743
+The average SSIM value of D is 0.4730
+The average SSIM value of E is 0.4764
+
+The average Histogram distance of A is 1.0000
+The average Histogram distance of B is 1.0000
+The average Histogram distance of C is 1.0000
+The average Histogram distance of D is 1.0000
+The average Histogram distance of E is 1.0000
+
+The average PSNR value of A is 22.2595
+The average PSNR value of B is 22.2576
+The average PSNR value of C is 22.3494
+The average PSNR value of D is 22.3545
+The average PSNR value of E is 22.5371
+
+--------------------------------------------------
+noise density 0.9
+
+The average time-used of A is 7.1702
+The average time-used of B is 6.7139
+The average time-used of C is 6.2590
+The average time-used of D is 4.7428
+The average time-used of E is 3.6535
+
+The average FSIM value of A is 0.7729
+The average FSIM value of B is 0.7754
+The average FSIM value of C is 0.7789
+The average FSIM value of D is 0.7755
+The average FSIM value of E is 0.7785
+
+The average SSIM value of A is 0.3292
+The average SSIM value of B is 0.3276
+The average SSIM value of C is 0.3300
+The average SSIM value of D is 0.3254
+The average SSIM value of E is 0.3273
+
+The average Histogram distance of A is 1.0000
+The average Histogram distance of B is 0.9961
+The average Histogram distance of C is 0.9932
+The average Histogram distance of D is 0.9961
+The average Histogram distance of E is 0.9961
+
+The average PSNR value of A is 20.3446
+The average PSNR value of B is 20.4715
+The average PSNR value of C is 20.8198
+The average PSNR value of D is 20.5107
+The average PSNR value of E is 20.6838
+
+--------------------------------------------------

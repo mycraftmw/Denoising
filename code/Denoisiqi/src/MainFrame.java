@@ -1,7 +1,10 @@
+import NoiseRemover.NoiseRemover;
+
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.io.File;
+import java.util.ArrayList;
 
 /**
  * Created by TongyuYue on 2017/2/23.
@@ -15,8 +18,8 @@ public class MainFrame extends JFrame {
     private JLabel rstLabel;
     private ImageIcon oriImage;
     private ImageIcon rstImage;
+    private String oriPath;
     private String[] strs = new String[]{"gray01re.jpg", "gray09re.jpg"};
-    private int a = 0;
 
     public MainFrame() throws HeadlessException {
         buttonPanel = new JPanel(new FlowLayout());
@@ -44,7 +47,8 @@ public class MainFrame extends JFrame {
             chooser.setFileFilter(filter);
             chooser.showOpenDialog(null);
             File file = chooser.getSelectedFile();
-            oriImage = new ImageIcon(file.getAbsolutePath());
+            oriPath = file.getAbsolutePath();
+            oriImage = new ImageIcon(oriPath);
             oriImage.setImage(scaleImage(oriImage, 512));
             oriLabel.setIcon(oriImage);
         });
@@ -60,10 +64,20 @@ public class MainFrame extends JFrame {
 //            chooser.showOpenDialog(null);
 //            File file = chooser.getSelectedFile();
 //            rstImage = new ImageIcon(file.getAbsolutePath());
-            rstImage = new ImageIcon("d:\\ck.png");
-            a %= 2;
-            rstImage.setImage(MainFrame.this.scaleImage(rstImage, 512));
-            rstLabel.setIcon(rstImage);
+//            com.mathworks.toolbox.javabuilder.MWArray[] args = new com.mathworks.toolbox.javabuilder.MWArray[2];
+//            args[0] = new com.mathworks.toolbox.javabuilder.MWArray(oriPath);
+            java.util.List lhs = new ArrayList(1);
+            java.util.List rhs = new ArrayList(1);
+            rhs.add(new com.mathworks.toolbox.javabuilder.MWCharArray(oriPath));
+            try {
+                NoiseRemover Zaoyi = new NoiseRemover();
+                Zaoyi.RemovalNoise(lhs, rhs);
+                rstImage = new ImageIcon("d:\\result.jpg");
+                rstImage.setImage(MainFrame.this.scaleImage(rstImage, 512));
+                rstLabel.setIcon(rstImage);
+            } catch (com .mathworks.toolbox.javabuilder.MWException kkk){
+
+            }
         });
 
         buttonPanel.add(addImageButton);
